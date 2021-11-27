@@ -1,61 +1,82 @@
 const getNthElement = (index, array) => {
-  // your code here
+  return array[index % array.length];
 };
 
 const arrayToCSVString = array => {
-  // your code here
+  return array.join(',');
 };
 
 const csvStringToArray = string => {
-  // your code here
+  return string.split(',');
 };
 
 const addToArray = (element, array) => {
-  // your code here
+  array.push(element);
 };
 
 const addToArray2 = (element, array) => {
-  // your code here
+  const newArray = array.slice();
+  newArray.push(element);
+  return newArray;
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+  return array.splice(index, 1);
 };
 
 const numbersToStrings = numbers => {
-  // your code here
+  return numbers.map(number => number.toString());
 };
 
 const uppercaseWordsInArray = strings => {
-  // your code here
+  return strings.map(string => string.toUpperCase());
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+  return strings.map(string => string.split('').reverse().join(''));
 };
 
 const onlyEven = numbers => {
-  // your code here
+  return numbers.filter(number => number % 2 === 0);
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  const newArray = array.slice();
+  newArray.splice(index, 1);
+  return newArray;
 };
 
 const elementsStartingWithAVowel = strings => {
-  // your code here
+  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  return strings.filter(string => vowels.includes(string[0].toLowerCase()));
 };
 
 const removeSpaces = string => {
-  // your code here
+  return string.split(' ').join('');
 };
 
 const sumNumbers = numbers => {
-  // your code here
+  let total = 0;
+  for (let i = 0; i < numbers.length; i += 1) {
+    total += numbers[i];
+  }
+  return total;
 };
 
 const sortByLastLetter = strings => {
-  // your code here
+  strings.sort((a, b) => {
+    if (a.slice(-1) < b.slice(-1)) {
+      return -1;
+    }
+
+    if (a.slice(-1) > b.slice(-1)) {
+      return 1;
+    }
+
+    return 0;
+  });
+
+  return strings;
 };
 
 module.exports = {
