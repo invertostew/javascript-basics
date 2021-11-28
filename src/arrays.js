@@ -47,8 +47,11 @@ const removeNthElement2 = (index, array) => {
 };
 
 const elementsStartingWithAVowel = strings => {
-  const vowels = ['a', 'e', 'i', 'o', 'u'];
-  return strings.filter(string => vowels.includes(string[0].toLowerCase()));
+  // const vowels = ['a', 'e', 'i', 'o', 'u'];
+  // return strings.filter(string => vowels.includes(string[0].toLowerCase()));
+
+  const startsWithVowelRegex = /^[aeiou]/i;
+  return strings.filter(string => startsWithVowelRegex.test(string));
 };
 
 const removeSpaces = string => {

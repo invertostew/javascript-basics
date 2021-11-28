@@ -35,9 +35,7 @@ function one(a, b) {
 }
 
 function truthiness(a) {
-  const falsy = [false, 0, '', null, undefined, NaN];
-
-  if (falsy.includes(a)) {
+  if (!a) {
     return false;
   }
 
@@ -101,15 +99,18 @@ function startsWith(char, string) {
 }
 
 function containsVowels(string) {
-  const vowels = ['a', 'e', 'i', 'o', 'u'];
+  // const vowels = ['a', 'e', 'i', 'o', 'u'];
 
-  for (let i = 0; i < string.length; i += 1) {
-    if (vowels.includes(string[i].toLowerCase())) {
-      return true;
-    }
-  }
+  // for (let i = 0; i < string.length; i += 1) {
+  //   if (vowels.includes(string[i].toLowerCase())) {
+  //     return true;
+  //   }
+  // }
 
-  return false;
+  // return false;
+
+  const containsVowelRegex = /[aeiou]/i;
+  return containsVowelRegex.test(string);
 }
 
 function isLowerCase(string) {
