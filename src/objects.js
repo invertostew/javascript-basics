@@ -10,19 +10,9 @@ const getProperty = (property, object) => {
   return object[property];
 };
 
-const hasProperty = (property, object) => {
-  if (object[property]) {
-    return true;
-  }
-  return false;
-};
+const hasProperty = (property, object) => object.hasOwnProperty(property);
 
-const isOver65 = person => {
-  if (person.age > 65) {
-    return true;
-  }
-  return false;
-};
+const isOver65 = person => person.age > 65;
 
 const getAges = people => {
   return people.map(person => person.age);
@@ -37,7 +27,10 @@ const findHondas = cars => {
 };
 
 const averageAge = people => {
-  const totalAge = people.reduce((accumulator, person) => accumulator + person.age, 0);
+  const totalAge = people.reduce(
+    (accumulator, person) => accumulator + person.age,
+    0
+  );
   return totalAge / people.length;
 };
 
@@ -45,7 +38,7 @@ const createTalkingPerson = (name, age) => {
   const person = {
     name,
     age,
-    introduce: name => `Hi ${name}, my name is ${person.name} and I am ${person.age}!`
+    introduce: human => `Hi ${human}, my name is ${name} and I am ${age}!`
   };
   return person;
 };

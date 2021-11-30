@@ -65,19 +65,9 @@ const sumNumbers = numbers => {
 };
 
 const sortByLastLetter = strings => {
-  strings.sort((a, b) => {
-    if (a.slice(-1) < b.slice(-1)) {
-      return -1;
-    }
-
-    if (a.slice(-1) > b.slice(-1)) {
-      return 1;
-    }
-
-    return 0;
-  });
-
-  return strings;
+  return strings.sort(
+    (a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1)
+  );
 };
 
 module.exports = {

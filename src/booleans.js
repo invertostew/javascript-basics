@@ -1,125 +1,35 @@
-function negate(a) {
-  return !a;
-}
+const negate = a => !a;
 
-function both(a, b) {
-  if (!a || !b) {
-    return false;
-  }
+const both = (a, b) => a && b;
 
-  return true;
-}
+const either = (a, b) => a || b;
 
-function either(a, b) {
-  if (a || b) {
-    return true;
-  }
+const none = (a, b) => !(a || b);
 
-  return false;
-}
+const one = (a, b) => (a && !b) || (b && !a);
 
-function none(a, b) {
-  if (a || b) {
-    return false;
-  }
+const truthiness = a => Boolean(a);
 
-  return true;
-}
+const isEqual = (a, b) => a === b;
 
-function one(a, b) {
-  if ((a && !b) || (b && !a)) {
-    return true;
-  }
+const isGreaterThan = (a, b) => a > b;
 
-  return false;
-}
+const isLessThanOrEqualTo = (a, b) => a <= b;
 
-function truthiness(a) {
-  if (!a) {
-    return false;
-  }
+const isOdd = a => a % 2 !== 0;
 
-  return true;
-}
+const isEven = a => a % 2 === 0;
 
-function isEqual(a, b) {
-  if (a === b) {
-    return true;
-  }
+const isSquare = a => Math.sqrt(a) % 1 === 0;
 
-  return false;
-}
+const startsWith = (char, string) => string[0] === char;
 
-function isGreaterThan(a, b) {
-  if (a > b) {
-    return true;
-  }
-
-  return false;
-}
-
-function isLessThanOrEqualTo(a, b) {
-  if (a <= b) {
-    return true;
-  }
-
-  return false;
-}
-
-function isOdd(a) {
-  if (a % 2 !== 0) {
-    return true;
-  }
-
-  return false;
-}
-
-function isEven(a) {
-  if (a % 2 === 0) {
-    return true;
-  }
-
-  return false;
-}
-
-function isSquare(a) {
-  if (Math.sqrt(a) % 1 === 0) {
-    return true;
-  }
-
-  return false;
-}
-
-function startsWith(char, string) {
-  if (string[0] === char) {
-    return true;
-  }
-
-  return false;
-}
-
-function containsVowels(string) {
-  // const vowels = ['a', 'e', 'i', 'o', 'u'];
-
-  // for (let i = 0; i < string.length; i += 1) {
-  //   if (vowels.includes(string[i].toLowerCase())) {
-  //     return true;
-  //   }
-  // }
-
-  // return false;
-
+const containsVowels = string => {
   const containsVowelRegex = /[aeiou]/i;
   return containsVowelRegex.test(string);
-}
+};
 
-function isLowerCase(string) {
-  if (string === string.toLowerCase()) {
-    return true;
-  }
-
-  return false;
-}
+const isLowerCase = string => string === string.toLowerCase();
 
 module.exports = {
   negate,
